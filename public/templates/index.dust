@@ -1,0 +1,13 @@
+{>"layouts/master" /}
+
+{<title}
+    Product List
+{/title}
+
+{<body}
+    <main role="main">
+        <p>{@pre type="content" key="index.greeting"/}</p>
+        <div class="products">
+        </div>
+    </main>
+{/body}
