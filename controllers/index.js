@@ -1,17 +1,22 @@
 'use strict';
 
 
-var IndexModel = require('../models/index');
+var Product = require('../models/productModel');
 
 
 module.exports = function (app) {
 
-    var model = new IndexModel();
-
-
     app.get('/', function (req, res) {
         
-        res.render('index', model);
+        Product.find(function (err, prods) {
+            if (err) {
+                console.log(err);
+            }
+            
+            var model = {products: prods};
+            
+            res.render('index', model);
+        });
         
     });
 
