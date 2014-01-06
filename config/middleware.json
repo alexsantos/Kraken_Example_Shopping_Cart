@@ -4,7 +4,7 @@
             "404": "errors/404",
             "500": "errors/500",
             "503": "errors/503"
-        }
+        },
 //      "appsec": {
 //        "csrf": true,
 //        "csp": false,
@@ -17,10 +17,13 @@
 //          "less": "css"
 //      },
 //
-//      "session": {
-//          "module": "memory",
-//          "secret": "80bc6d67f80813ccc78ff77adf0eefcafa7eeef6"
-//      },
+      "session": {
+          "module": "connect-mongo",
+          "config": {
+            "db": "test"
+          },
+          "secret": "80bc6d67f80813ccc78ff77adf0eefcafa7eeef6"
+      }
 //
 //      "static": {
 //          "srcRoot": "path:./public",

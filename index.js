@@ -5,6 +5,7 @@ var kraken = require('kraken-js'),
     db = require('./lib/database'),
     language = require('./lib/language'),
     connect = require('connect'),
+    //MongoStore = require('connect-mongo')(connect),
     app = {};
 
 
@@ -24,6 +25,9 @@ app.requestBeforeRoute = function requestBeforeRoute(server) {
     // Run before any routes have been added.
     server.use(language());
     server.use(connect.methodOverride());
+    //server.use(connect.session({ store: new MongoStore({
+    //    url: 'mongodb://localhost/test'
+    //}), secret: 'keyboard cat'}));
 };
 
 
