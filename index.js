@@ -4,7 +4,7 @@
 var kraken = require('kraken-js'),
     db = require('./lib/database'),
     language = require('./lib/language'),
-    connect = require('connect'),
+    express = require('express'),
     app = {};
 
 
@@ -23,7 +23,7 @@ app.requestStart = function requestStart(server) {
 app.requestBeforeRoute = function requestBeforeRoute(server) {
     // Run before any routes have been added.
     server.use(language());
-    server.use(connect.methodOverride());
+    server.use(express.methodOverride());
 };
 
 
